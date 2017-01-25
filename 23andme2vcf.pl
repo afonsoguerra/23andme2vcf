@@ -14,8 +14,11 @@ my $skip_count = 0;
 
 my $raw_path = $ARGV[0];
 my $output_path = $ARGV[1];
-my $version = (defined($ARGV[2])) ? int($ARGV[2]) : 3;
-my $ref_path = "23andme_v".$version."_hg19_ref.txt.gz";
+
+#my $version = (defined($ARGV[2])) ? int($ARGV[2]) : 3;
+#my $ref_path = "23andme_v".$version."_hg19_ref.txt.gz";
+my $ref_path = "superDatabase.txt.gz";
+
 my $missing_ref_path = "sites_not_in_reference.txt";
 
 my $date = strftime('%Y%m%d',localtime);
@@ -187,9 +190,9 @@ sub missing_sites {
 
 sub skips {
   if ($skip_count) {
-    my $other_version = ($version == 3) ? 4 : 3;
-    print "$skip_count sites were not included; these unmatched references can be found in $missing_ref_path." . 
-    "Try running again, but specify the other reference version:\n".
-    "./23andme2vcf.pl $ARGV[0] $ARGV[1] $other_version\n"
+      #my $other_version = ($version == 3) ? 4 : 3;
+      print "$skip_count sites were not included; these unmatched references can be found in $missing_ref_path." ;#.
+      #    "Try running again, but specify the other reference version:\n".
+      #"./23andme2vcf.pl $ARGV[0] $ARGV[1] $other_version\n"
   }
 }
