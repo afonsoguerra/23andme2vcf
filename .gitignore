@@ -1,3 +1,8 @@
 23andme2vcf
 data
 *.o
+asd.vcf
+donationReferenceSNPs_no_i_ids.txt
+sites_not_in_reference.txt
+superDatabase.txt.gz
+todoHere.txt
